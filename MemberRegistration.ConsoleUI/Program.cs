@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using MemberRegistration.Business.Abstract;
 using MemberRegistration.Business.DependencyResolvers.Ninject;
 using MemberRegistration.Entities.Concrete;
+using Ninject;
 
 namespace MemberRegistration.ConsoleUI
 {
@@ -10,6 +11,9 @@ namespace MemberRegistration.ConsoleUI
     {
         public static async Task Main(string[] args)
         {
+            // IKernel kernel = new StandardKernel(new BusinessModule());  
+
+            
             var memberService = InstanceFactory.GetInstance<IMemberService>();
             var result = await memberService.AddAsync(new Member
             {
@@ -21,6 +25,8 @@ namespace MemberRegistration.ConsoleUI
             });
             Console.WriteLine("Eklendi.");
             Console.ReadLine();
+            
+            
         }
     }
 }
