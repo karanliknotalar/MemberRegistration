@@ -26,7 +26,6 @@ namespace MemberRegistration.ConsoleUI
             Console.WriteLine("Eklendi.");
             Console.ReadLine();
             
-            
         }
     }
 }
